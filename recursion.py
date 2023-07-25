@@ -4,6 +4,8 @@ no_withdraw_bills_stocked = [10, 10, 10, 10, 10, 10]
 bills_stocked = [10, 10, 10, 10, 10, 10]
 bill_values = [100, 50, 20, 10, 5, 1]
 def withdraw(amt, original_amt, over_counter, counter, iterations, iter_count, value_of_bills, stock_of_bills, orig_stock):
+    if(amt > 2000):
+        return "Failed: Insufficient Balance", orig_stock
     if(amt == 0):
        if(iterations>0):
         temp = orig_stock[iter_count] - iterations
